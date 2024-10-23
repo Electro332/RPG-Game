@@ -1,0 +1,30 @@
+/* Made By Timothy Davis */
+#game {
+border: 5px solid;
+margin: auto;
+width: 30%;
+}
+
+#stats {
+    border: px solid;
+}
+
+#statText {
+    border: 1px solid;
+}
+
+.stat {
+    font-weight: bold;
+}
+
+#monsterStats {
+    background-color: red;
+    display: none;
+}
+
+#text {
+    background-color: darkgray;
+    padding: 10px;
+    color: white;
+    margin-top: 5px;
+}
