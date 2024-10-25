@@ -21,7 +21,7 @@ let monsterHealth = ""
 let damage = ""
 let cost = 25
 let weakened = false;
-let onFire = false;
+let frozen = false;
 
 button1.onclick = goStore;
 button2.onclick = goForest;
@@ -247,7 +247,7 @@ function goStore(){
          if (superRandomNumber >= 0 && superRandomNumber <= 1/3){
             weakened = true;
          } else if (superRandomNumber >= 1/3 && superRandomNumber <= 2/3){
-            onFire = true;
+            frozen = true;
          }
     }
         if (weakened === false){
@@ -331,6 +331,12 @@ function goStore(){
         text.innerText += ` You feel weaker. `
         console.log(damage);
         weakened = false;
+    } else if(frozen === true){
+    	text.innerText += ` You are frozen`;
+        button2.style.display = "none";
+        button3.style.display = "none";
+        button1.innerText = "Skip turn";
+        button1.onclick = skipTurn;
     }
  
 }   
@@ -364,7 +370,19 @@ function goStore(){
         }
     }
 
-    
+    function skipTurn(){
+    	frozen = false;
+    	randomNumber = Math.round(Math.random() * (40 - 30)) + 30;
+        if (randomNumber >= 30 && randomNumber <= 40){
+            text.innerText = `The Wizard hit you with a spell. It did ${randomNumber} damage.`
+            health -= randomNumber;
+            healthText.innerText = health;
+          } 
+        button1.innerText = "Attack";
+        button1.onclick = attack;
+        button2.style.display = "inline-block";
+        button3.style.display = "inline-block"; 
+    }
    
     function restart(){
         health = 100;
