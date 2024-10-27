@@ -1,12 +1,29 @@
 /* Made By Timothy Davis */
+body {
+background-color: black;
+}
+
 #game {
-border: 5px solid;
-margin: auto;
+border: 5px solid grey;
+background-color: white;
 width: 30%;
+margin: auto;
 }
 
 #stats {
-    border: px solid;
+    color: black;
+}
+
+#healthText {
+    color: red;
+}
+
+#goldText {
+    color: yellow;
+}
+
+#xpText {
+    color: lightblue;
 }
 
 #statText {
@@ -17,13 +34,17 @@ width: 30%;
     font-weight: bold;
 }
 
+button {
+    background: linear-gradient(90deg, #FFC671 10%, orange);
+}
+
 #monsterStats {
     background-color: red;
     display: none;
 }
 
 #text {
-    background-color: darkgray;
+    background-color: darkgreen;
     padding: 10px;
     color: white;
     margin-top: 5px;
